@@ -1,0 +1,203 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.freeBox___9K4JB {
+  max-width: 1024px;
+  display: flex;
+  flex-direction: row;
+  flex-column-gap: 0px;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 32px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox___9K4JB {
+    padding-left: 12px;
+    padding-right: 12px;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+.svg__yjzc4 {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.text__qxjyo {
+  display: none;
+}
+.svg___0Vb0F {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.freeBox__yR7Vl {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+.freeBox__yR7Vl > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.freeBox__yR7Vl > :global(.__wab_flex-container) > *,
+.freeBox__yR7Vl > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__yR7Vl > :global(.__wab_flex-container) > picture > img,
+.freeBox__yR7Vl
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.searchButton:global(.__wab_instance) {
+  display: none;
+}
+.searchButton__searchOpen:global(.__wab_instance) {
+  min-width: 200px;
+}
+.svg___9D8NY {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg___3R3VY {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.searchInput:global(.__wab_instance) {
+  position: relative;
+  max-width: 200px;
+  display: none;
+}
+.searchInput__searchOpen:global(.__wab_instance) {
+  display: flex;
+}
+.svg__au3Rv {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg__m9XzF {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.metamaskConnect:global(.__wab_instance):global(.__wab_instance) {
+  position: relative;
+  display: none;
+}
+.loginButton:global(.__wab_instance) {
+  position: relative;
+}
+.svg__mvKj0 {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.svg___08X3Z {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__tfR06 {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.svg__x9MLy {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg__raKpK {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg__bB9Ph {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.freeBox__rmsW9 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.cartButton:global(.__wab_instance) {
+  display: none;
+}
+.svg__crTei {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.text__yUitN {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+.svg__zPt0X {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.logoutButton:global(.__wab_instance) {
+  position: relative;
+}
+.svg__yxbIm {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.svg___5N9G6 {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}

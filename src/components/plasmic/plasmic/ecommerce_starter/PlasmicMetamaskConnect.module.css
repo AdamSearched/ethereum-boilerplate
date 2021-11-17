@@ -1,0 +1,16 @@
+.root:global(.__wab_instance) {
+  position: relative;
+}
+.svg__pliRp {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.svg__drFs5 {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}

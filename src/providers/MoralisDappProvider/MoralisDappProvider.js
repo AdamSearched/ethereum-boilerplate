@@ -1,3 +1,5 @@
+//this is checking for wallet changes and chain changes. It returns
+//a component, unsure what that does
 import React, { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import MoralisDappContext from "./context";
@@ -6,6 +8,7 @@ function MoralisDappProvider({ children }) {
   const { web3, Moralis, user } = useMoralis();
   const [walletAddress, setWalletAddress] = useState();
   const [chainId, setChainId] = useState();
+  
   useEffect(() => {
     Moralis.onChainChanged(function (chain) {
       setChainId(chain);

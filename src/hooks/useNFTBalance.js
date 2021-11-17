@@ -1,3 +1,4 @@
+//this hook is getting the NFTs for the user
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { useEffect, useState } from "react";
 import { useMoralisWeb3Api, useMoralisWeb3ApiCall } from "react-moralis";
@@ -5,7 +6,7 @@ import { useIPFS } from "./useIPFS";
 
 export const useNFTBalance = (options) => {
   const { account } = useMoralisWeb3Api();
-  const { chainId } = useMoralisDapp();
+  const { chainId, walletAddress } = useMoralisDapp();
   const { resolveLink } = useIPFS();
   const [NFTBalance, setNFTBalance] = useState([]);
   const {
@@ -13,7 +14,10 @@ export const useNFTBalance = (options) => {
     data,
     error,
     isLoading,
-  } = useMoralisWeb3ApiCall(account.getNFTs, { chain: chainId, ...options });
+  } = useMoralisWeb3ApiCall(account.getNFTs, { chain: chainId, address: walletAddress, ...options });
+//this line above is getting the NFTs via API call
+//had to add in the address as this was missing from the source
+
 
   useEffect(() => {
     if (data?.result) {
