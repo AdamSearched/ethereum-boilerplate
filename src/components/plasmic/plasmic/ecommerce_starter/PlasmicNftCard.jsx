@@ -24,6 +24,7 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_ecommerce_starter.module.css"; // plasmic-import: wsRXF2j5MAPa2EH2XkCbWH/projectcss
 import * as sty from "./PlasmicNftCard.module.css"; // plasmic-import: 4WAwdYQPvRJW/css
+import DeliveryIcon from "./icons/PlasmicIcon__Delivery"; // plasmic-import: HjikApCO2VX9/icon
 import RightArrowIcon from "./icons/PlasmicIcon__RightArrow"; // plasmic-import: sth0rOpjGBUT/icon
 
 export const PlasmicNftCard__VariantProps = new Array("small");
@@ -59,10 +60,10 @@ function PlasmicNftCard__RenderFunc(props) {
       data-plasmic-trigger-props={[triggerRootHoverProps]}
     >
       <a
-        data-plasmic-name={"link"}
-        data-plasmic-override={overrides.link}
-        className={classNames(defaultcss.a, projectcss.a, sty.link, {
-          [sty.link__small]: hasVariant(variants, "small", "small")
+        data-plasmic-name={"nftLink"}
+        data-plasmic-override={overrides.nftLink}
+        className={classNames(defaultcss.a, projectcss.a, sty.nftLink, {
+          [sty.nftLink__small]: hasVariant(variants, "small", "small")
         })}
         href={args.link}
       >
@@ -215,16 +216,35 @@ function PlasmicNftCard__RenderFunc(props) {
                 sty.freeBox__iSa09
               )}
             >
-              <RightArrowIcon
-                data-plasmic-name={"nftTransfer"}
-                data-plasmic-override={overrides.nftTransfer}
+              <div
                 className={classNames(
                   defaultcss.all,
                   projectcss.all,
-                  sty.nftTransfer
+                  sty.freeBox__hoRbx
                 )}
-                role={"img"}
-              />
+              >
+                <DeliveryIcon
+                  data-plasmic-name={"nftChain"}
+                  data-plasmic-override={overrides.nftChain}
+                  className={classNames(
+                    defaultcss.all,
+                    projectcss.all,
+                    sty.nftChain
+                  )}
+                  role={"img"}
+                />
+
+                <RightArrowIcon
+                  data-plasmic-name={"nftTransfer"}
+                  data-plasmic-override={overrides.nftTransfer}
+                  className={classNames(
+                    defaultcss.all,
+                    projectcss.all,
+                    sty.nftTransfer
+                  )}
+                  role={"img"}
+                />
+              </div>
             </div>
           </p.Stack>
         ) : null}
@@ -236,19 +256,30 @@ function PlasmicNftCard__RenderFunc(props) {
 const PlasmicDescendants = {
   root: [
     "root",
-    "link",
+    "nftLink",
     "nftImage",
     "nftName",
     "nftDesc",
     "price",
+    "nftChain",
     "nftTransfer"
   ],
 
-  link: ["link", "nftImage", "nftName", "nftDesc", "price", "nftTransfer"],
+  nftLink: [
+    "nftLink",
+    "nftImage",
+    "nftName",
+    "nftDesc",
+    "price",
+    "nftChain",
+    "nftTransfer"
+  ],
+
   nftImage: ["nftImage"],
   nftName: ["nftName"],
   nftDesc: ["nftDesc"],
   price: ["price"],
+  nftChain: ["nftChain"],
   nftTransfer: ["nftTransfer"]
 };
 
@@ -283,11 +314,12 @@ export const PlasmicNftCard = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    link: makeNodeComponent("link"),
+    nftLink: makeNodeComponent("nftLink"),
     nftImage: makeNodeComponent("nftImage"),
     nftName: makeNodeComponent("nftName"),
     nftDesc: makeNodeComponent("nftDesc"),
     price: makeNodeComponent("price"),
+    nftChain: makeNodeComponent("nftChain"),
     nftTransfer: makeNodeComponent("nftTransfer"),
     // Metadata about props expected for PlasmicNftCard
     internalVariantProps: PlasmicNftCard__VariantProps,

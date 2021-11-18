@@ -2,23 +2,38 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PlasmicItem } from "./plasmic/ecommerce_starter/PlasmicItem";
+import { useNFTBalance } from "hooks/useNFTBalance";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function Item_(props, ref) {
-  // Use PlasmicItem to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicItem are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, we are just piping all ItemProps here, but feel free
-  // to do whatever works for you.
-  return <PlasmicItem root={{ ref }} {...props} />;
+    
+      const queryString = require('query-string');
+      //get url and split out attribute, which will be NFT contract address
+      const windowUrl = window.location.search;
+      const params = queryString.parse(windowUrl);
+
+      const { NFTBalance } = useNFTBalance();
+      const [Nft, setNft] = useState(null);
+      console.log(NFTBalance, params);
+
+      useEffect(() => {
+      setNft(NFTBalance.filter(function(data){return data.token_id == params.id})[0])      
+      console.log(Nft, "the nft");
+      },[])
+
+  return <PlasmicItem root={{ ref }} {...props} 
+  nftNamePage={{
+    //children: nft[0].name
+    }}
+  nftDescPage={{
+    //children: nft[0].description
+    }}
+  nftImagePage={{
+    //children: nft[0].image
+    }}
+
+
+  />;
 }
 
 const Item = React.forwardRef(Item_);

@@ -9,20 +9,8 @@ import AddressInput from "./AddressInput";
 import NftCard from "./plasmic/NftCard";
 //import { FileSearchOutlined, SendOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
-//import { getExplorer } from "helpers/networks";
+import { getExplorer } from "helpers/networks";
 //const { Meta } = Card;
-
-//const styles = {
-//  NFTs: {
-//    display: "flex",
-//    flexWrap: "wrap",
-//    WebkitBoxPack: "start",
-//    justifyContent: "flex-start",
-//    margin: "0 auto",
- //   maxWidth: "1000px",
-//    gap: "10px",
-//  },
-//};
 
 function NFTBalance() {
   const { NFTBalance } = useNFTBalance();
@@ -76,6 +64,10 @@ function NFTBalance() {
     <>
         {NFTBalance && NFTBalance.map((nft, index) => (
             <NftCard 
+                  nftLink={{
+                    as: 'a',
+                      props: {href: '/item?id=' + nft.token_id}
+                  }}
                   nftName={{
                     children: nft.name
                     }}
@@ -88,6 +80,9 @@ function NFTBalance() {
                   nftTransfer={{
                     props: {onClick: () => handleTransferClick(nft)}
                     }}
+                  nftChain={{
+                    props: {onClick: () => window.open(`${getExplorer(chainId)}address/${nft.token_address}`, "_blank")}
+                    }}  
                   key={index}   
                 />))
                 }
