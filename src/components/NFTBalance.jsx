@@ -62,7 +62,7 @@ function NFTBalance() {
 
   return (
     <>
-        {NFTBalance && NFTBalance.map((nft, index) => (
+        {NFTBalance?.result && NFTBalance.result.map((nft, index) => (
             <NftCard 
                   nftLink={{
                     as: 'a',
