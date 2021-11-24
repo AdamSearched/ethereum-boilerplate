@@ -58,7 +58,7 @@ function NFTBalance() {
     setAmount(e.target.value);
   };
 
-  console.log(NFTBalance);
+  console.log("NFT Balance", NFTBalance);
 
   return (
     <>

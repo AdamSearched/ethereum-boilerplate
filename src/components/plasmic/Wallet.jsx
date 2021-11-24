@@ -7,7 +7,8 @@ import NFTBalance from "components/NFTBalance";
 import { useMoralis } from "react-moralis";
 
 function Wallet_(props, ref) {
-  const { authenticate, isAuthenticated, logout } = useMoralis();
+  
+  const { logout } = useMoralis();
   
   return (<PlasmicWallet root={{ ref }} {...props} 
   balanceText={{
@@ -17,7 +18,7 @@ function Wallet_(props, ref) {
     children: <NFTBalance />
   }}
   walletLogout={{
-    //onClick: () => logout()
+    onClick: () => logout()
   }}
   />)
 }

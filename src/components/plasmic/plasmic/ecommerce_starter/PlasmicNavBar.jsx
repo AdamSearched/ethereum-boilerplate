@@ -163,13 +163,6 @@ function PlasmicNavBar__RenderFunc(props) {
             />
           ) : null}
           {true ? (
-            <MetamaskConnect
-              data-plasmic-name={"metamaskConnect"}
-              data-plasmic-override={overrides.metamaskConnect}
-              className={classNames("__wab_instance", sty.metamaskConnect)}
-            />
-          ) : null}
-          {true ? (
             <Button
               data-plasmic-name={"loginButton"}
               data-plasmic-override={overrides.loginButton}
@@ -279,6 +272,13 @@ function PlasmicNavBar__RenderFunc(props) {
           </div>
 
           {true ? (
+            <MetamaskConnect
+              data-plasmic-name={"metamaskConnect"}
+              data-plasmic-override={overrides.metamaskConnect}
+              className={classNames("__wab_instance", sty.metamaskConnect)}
+            />
+          ) : null}
+          {true ? (
             <Button
               data-plasmic-name={"logoutButton"}
               data-plasmic-override={overrides.logoutButton}
@@ -302,22 +302,22 @@ const PlasmicDescendants = {
     "homeButton",
     "searchButton",
     "searchInput",
-    "metamaskConnect",
     "loginButton",
     "button",
     "profileButton",
     "cartButton",
+    "metamaskConnect",
     "logoutButton"
   ],
 
   homeButton: ["homeButton"],
   searchButton: ["searchButton"],
   searchInput: ["searchInput"],
-  metamaskConnect: ["metamaskConnect"],
   loginButton: ["loginButton"],
   button: ["button"],
   profileButton: ["profileButton"],
   cartButton: ["cartButton"],
+  metamaskConnect: ["metamaskConnect"],
   logoutButton: ["logoutButton"]
 };
 
@@ -355,11 +355,11 @@ export const PlasmicNavBar = Object.assign(
     homeButton: makeNodeComponent("homeButton"),
     searchButton: makeNodeComponent("searchButton"),
     searchInput: makeNodeComponent("searchInput"),
-    metamaskConnect: makeNodeComponent("metamaskConnect"),
     loginButton: makeNodeComponent("loginButton"),
     button: makeNodeComponent("button"),
     profileButton: makeNodeComponent("profileButton"),
     cartButton: makeNodeComponent("cartButton"),
+    metamaskConnect: makeNodeComponent("metamaskConnect"),
     logoutButton: makeNodeComponent("logoutButton"),
     // Metadata about props expected for PlasmicNavBar
     internalVariantProps: PlasmicNavBar__VariantProps,

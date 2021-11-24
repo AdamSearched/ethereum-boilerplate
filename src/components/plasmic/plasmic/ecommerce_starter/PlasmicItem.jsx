@@ -695,7 +695,7 @@ function PlasmicItem__RenderFunc(props) {
                       sty.nftDescriptionPage
                     )}
                   >
-                    {"lipsum orem"}
+                    {""}
                   </div>
                 </p.Stack>
 

@@ -3,35 +3,79 @@
 import * as React from "react";
 import { PlasmicItem } from "./plasmic/ecommerce_starter/PlasmicItem";
 import { useNFTBalance } from "hooks/useNFTBalance";
-//import { useCallback, useEffect, useRef, useState } from "react";
+import { useNFTTransfers } from "hooks/useNFTTransfers";
+import { useNFTForContract } from "hooks/useNFTForContract";
+import { useEffect, useState } from "react";
+//import { setPlumeStrictMode } from "@plasmicapp/react-web";
 
-function Item_(props, ref) {
-    
       const queryString = require('query-string');
       //get url and split out attribute, which will be NFT contract address
       const windowUrl = window.location.search;
       const params = queryString.parse(windowUrl);
 
-      const { NFTBalance } = useNFTBalance();
-      const [Nft, setNft] = useState(null);
-      console.log(NFTBalance, params);
+function Item_(props, ref) {
+    
+      //const { NFTBalance } = useNFTBalance();
+      const { NFTForContract } = useNFTForContract();
+      //const { NFTTransfers } = useNFTTransfers();
+      const [ Item, setItem ] = useState();
+      const [ itemName, setName ] = useState();
+      const [ itemDesc, setDesc ] = useState();
+      const [ itemImage, setImage ] = useState();
+      const [ itemAuth, setItemAuth ] = useState();
 
       useEffect(() => {
-      setNft(NFTBalance.filter(function(data){return data.token_id == params.id})[0])      
-      console.log(Nft, "the nft");
-      },[])
+        if (NFTForContract) {
+          const NFTItem = NFTForContract.filter(function (nft){
+            console.log("running useEffect", NFTForContract);
+            return nft.token_id == params.id;
+          })
+          setItem(NFTItem[0]);
+          if (Item){
+            setName(Item["metadata"].name);
+            setDesc(Item["metadata"].description);
+            setImage(Item["metadata"].image);
+            setItemAuth("Owner");
+            console.log(itemName, itemDesc, itemImage);
+          }else{
+            setItemAuth("Not Owner");
+          }  
+        }
+      })
+     
+      //useEffect(() => {
+      //  if (NFTBalance) {
+      //    const NFTItem = NFTBalance.filter(function (nft){
+      //      console.log("running useEffect", NFTBalance, NFTTransfers);
+      //      return nft.token_id == params.id;
+      //    })
+      //    setItem(NFTItem[0]);
+      //    if (Item){
+      //      setName(Item["metadata"].name);
+      //      setDesc(Item["metadata"].description);
+      //      setImage(Item["metadata"].image);
+      //      setItemAuth("Owner");
+      //      console.log(itemName, itemDesc, itemImage);
+      //    }else{
+      //      setItemAuth("Not Owner");
+      //    }  
+      //  }
+      //})
 
   return <PlasmicItem root={{ ref }} {...props} 
+  
   nftNamePage={{
-    //children: nft[0].name
+    children: String(itemName)
     }}
-  nftDescPage={{
-    //children: nft[0].description
+  nftDescriptionPage={{
+    children: String(itemDesc)
     }}
   nftImagePage={{
-    //children: nft[0].image
+    src: String(itemImage)
     }}
-
+  ownerAuth={{
+    children: String(itemAuth)
+    }}
 
   />;
 }

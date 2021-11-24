@@ -22,7 +22,7 @@ export const useNativeBalance = (options) => {
     ...options,
   });
 
-  console.log(walletAddress, "from useNativeBalance");
+  console.log(walletAddress, "from useNativeBalance", chainId, data, nativeName);
 
   useEffect(() => {
     if (data?.balance) {

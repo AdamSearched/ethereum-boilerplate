@@ -109,12 +109,9 @@
   width: 24px;
   height: 24px;
 }
-.metamaskConnect:global(.__wab_instance):global(.__wab_instance) {
-  position: relative;
-  display: none;
-}
 .loginButton:global(.__wab_instance) {
   position: relative;
+  display: none;
 }
 .svg__mvKj0 {
   object-fit: cover;
@@ -185,8 +182,12 @@
   width: 24px;
   height: 24px;
 }
+.metamaskConnect:global(.__wab_instance):global(.__wab_instance) {
+  position: relative;
+}
 .logoutButton:global(.__wab_instance) {
   position: relative;
+  display: none;
 }
 .svg__yxbIm {
   object-fit: cover;
